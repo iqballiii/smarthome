@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ProviderClass with ChangeNotifier {
-  late ThemeMode themeMode = ThemeMode.system;
+  ThemeMode themeMode = ThemeMode.system;
   List<bool> _toggles = [false, false, false];
   final dbRef = FirebaseDatabase.instance.reference();
   ProviderClass() {
@@ -18,19 +18,30 @@ class ProviderClass with ChangeNotifier {
 
   void dbUpdate(int index) {
     // _toggles[index] = !_toggles[index];
-    if (index == 0) {
-      if (_toggles[index])
-        dbRef.child('Light').set({'switch': '0'});
-      else
-        dbRef.child('Light').set({'switch': '1'});
-    } else
-      print('These buttons don\'t do anything as of now');
-
+    switch (index) {
+      case 0:
+        if (_toggles[0])
+          dbRef.child('Light').update({'switch1': '0'});
+        else
+          dbRef.child('Light').update({'switch1': '1'});
+        break;
+      case 1:
+        if (_toggles[1])
+          dbRef.child('Light').update({'switch2': '0'});
+        else
+          dbRef.child('Light').update({'switch2': '1'});
+        break;
+      // case 2:
+      //   print('Third button\'s functionality yet to be added');
+      //   break;
+      default:
+        print('Third button doesn\'t do anything as of now');
+    }
     notifyListeners();
   }
 
   void getButtonState() {
-    dbRef.child('Light').child('switch').once().then((data) {
+    dbRef.child('Light').child('switch1').once().then((data) {
       print('the value from db is ${data.value}');
       if (data.value == '1') {
         _toggles[0] = false;
@@ -40,11 +51,21 @@ class ProviderClass with ChangeNotifier {
         notifyListeners();
       }
     });
+    dbRef.child('Light').child('switch2').once().then((data) {
+      print('the value from db is ${data.value}');
+      if (data.value == '1') {
+        _toggles[1] = false;
+        notifyListeners();
+      } else {
+        _toggles[1] = true;
+        notifyListeners();
+      }
+    });
   }
 
   Future<void> onRefreshCall() async {
     final dbRef = FirebaseDatabase.instance.reference();
-    dbRef.child('Light').child('switch').once().then((data) {
+    dbRef.child('Light').child('switch1').once().then((data) {
       print('the value from db is ${data.value}');
       if (data.value == '1') {
         _toggles[0] = false;
