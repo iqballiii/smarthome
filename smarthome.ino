@@ -3,19 +3,15 @@
 #include <SoftwareSerial.h>
 #include <FirebaseArduino.h>
 
-//const char* ssid = "HD LINK"; //Enter SSID
-//const char* password = "qwerty#@!"; 
-const char* ssid = "net1107"; //Enter SSID
-const char* password = "password123"; 
-const char* FIREBASE_HOST  = "smart-switches-e6c1d-default-rtdb.firebaseio.com"; 
-const char* FIREBASE_AUTH = "l4XKbwNSTYN7RWfi75uB18kYac3invCQKRD2XxG9"; 
-//#define WIFI_SSID "net1107"
-//#define WIFI_PASSWORD "password123"
-//#define FIREBASE_HOST "https://smart-switches-e6c1d-default-rtdb.firebaseio.com/"
-//#define FIREBASE_AUTH "l4XKbwNSTYN7RWfi75uB18kYac3invCQKRD2XxG9"
+
+const char* ssid = ""; //Enter SSID
+const char* password = ""; //enter your wifi password 
+const char* FIREBASE_HOST  = ".firebaseio.com"; //enter your firebase database url
+const char* FIREBASE_AUTH = ""; //enter your secret key associated to the firebase account
+
 int LED = 0;
-String light;          //bool, which will store the value from the data base and check 
-// if the output is supposed to be "ON" or "OFF".
+String light;    //This variable will store the value from the data base and check 
+                 // if the output is supposed to be "ON" or "OFF".
 
 void setup()
 {
@@ -24,7 +20,8 @@ Serial.begin(115200);
 delay(500);
 Serial.println("\n"); 
 Serial.println("connecting"); 
-WiFi.begin(ssid, password);
+WiFi.begin(ssid, password);    //this function from the wifi library is used to setup your device to the 
+                               //internet.
 while(WiFi.status() != WL_CONNECTED)
 {
   Serial.print(".");
@@ -46,7 +43,7 @@ delay(1000);
 
 void loop()
 {  
-  light = Firebase.getString("/Light/switch");
+  light = Firebase.getString("/Light/switch1");
  //  handle error 
   if (Firebase.failed()) { 
       Serial.print("LIGHT switch failed:"); 
