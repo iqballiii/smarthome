@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">285839895325-0g1mj076o7elbhqo831lnil51l26prk5.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://smart-switches-e6c1d-default-rtdb.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">285839895325</string>
+    <string name="google_api_key" translatable="false">AIzaSyA_1qXZyKEerFgVfYITnncHLRBtOc2TMfs</string>
+    <string name="google_app_id" translatable="false">1:285839895325:android:d1756de973f023f9174ff4</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA_1qXZyKEerFgVfYITnncHLRBtOc2TMfs</string>
+    <string name="google_storage_bucket" translatable="false">smart-switches-e6c1d.appspot.com</string>
+    <string name="project_id" translatable="false">smart-switches-e6c1d</string>
+</resources>

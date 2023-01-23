@@ -2,7 +2,15 @@
 //  Generated file. Do not edit.
 //
 
+// clang-format off
+
 #import "GeneratedPluginRegistrant.h"
+
+#if __has_include(<firebase_auth/FLTFirebaseAuthPlugin.h>)
+#import <firebase_auth/FLTFirebaseAuthPlugin.h>
+#else
+@import firebase_auth;
+#endif
 
 #if __has_include(<firebase_core/FLTFirebaseCorePlugin.h>)
 #import <firebase_core/FLTFirebaseCorePlugin.h>
@@ -16,10 +24,10 @@
 @import firebase_database;
 #endif
 
-#if __has_include(<shared_preferences/FLTSharedPreferencesPlugin.h>)
-#import <shared_preferences/FLTSharedPreferencesPlugin.h>
+#if __has_include(<shared_preferences_foundation/SharedPreferencesPlugin.h>)
+#import <shared_preferences_foundation/SharedPreferencesPlugin.h>
 #else
-@import shared_preferences;
+@import shared_preferences_foundation;
 #endif
 
 #if __has_include(<speech_to_text/SpeechToTextPlugin.h>)
@@ -31,9 +39,10 @@
 @implementation GeneratedPluginRegistrant
 
 + (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
+  [FLTFirebaseAuthPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseAuthPlugin"]];
   [FLTFirebaseCorePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseCorePlugin"]];
   [FLTFirebaseDatabasePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseDatabasePlugin"]];
-  [FLTSharedPreferencesPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTSharedPreferencesPlugin"]];
+  [SharedPreferencesPlugin registerWithRegistrar:[registry registrarForPlugin:@"SharedPreferencesPlugin"]];
   [SpeechToTextPlugin registerWithRegistrar:[registry registrarForPlugin:@"SpeechToTextPlugin"]];
 }
 

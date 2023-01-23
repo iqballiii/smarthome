@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\smarthome\\flutter\\build\\shared_preferences_android\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\intes\\.gradle\\caches\\transforms-3\\556e5522f661b52388d717409a57de2a\\transformed\\core-1.6.0\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\smarthome\\flutter\\build\\shared_preferences_android\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\intes\\.gradle\\caches\\transforms-3\\556e5522f661b52388d717409a57de2a\\transformed\\core-1.6.0\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\smarthome\\flutter\\build\\shared_preferences_android\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\intes\\.gradle\\caches\\transforms-3\\556e5522f661b52388d717409a57de2a\\transformed\\core-1.6.0\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\smarthome\\flutter\\build\\shared_preferences_android\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\intes\\.gradle\\caches\\transforms-3\\556e5522f661b52388d717409a57de2a\\transformed\\core-1.6.0\\res\\layout-v21\\notification_template_icon_group.xml"
+    }
+]

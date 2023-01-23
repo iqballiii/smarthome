@@ -1,16 +1,13 @@
-//todo: add the splash screen and find an appicon soon
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:smart_switches/dashboard_screen.dart';
+import 'package:smart_switches/routes/routes_names.dart';
 
 class SplashScreen extends StatelessWidget {
-  static const String id = '/splash_screen';
-
   void endSplash(BuildContext context) {
     Timer(Duration(seconds: 3), () {
       Navigator.pushNamedAndRemoveUntil(
-          context, DashboardScreen.id, (route) => false);
+          context, Routes.dashboardScreen, (route) => false);
     });
   }
 
