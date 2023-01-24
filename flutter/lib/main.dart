@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:smart_switches/dashboard/dashboard_screen.dart';
 import 'package:smart_switches/firebase_provider.dart';
+import 'package:smart_switches/login/login_screen.dart';
 import 'package:smart_switches/routes/routes_names.dart';
 import 'package:smart_switches/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
           initialRoute: Routes.splashScreen,
           routes: {
             Routes.splashScreen: (context) => SplashScreen(),
+            Routes.loginScreen: (context) => LoginScreen(),
             Routes.dashboardScreen: (context) => DashboardScreen()
           },
         ),

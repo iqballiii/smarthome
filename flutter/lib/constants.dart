@@ -30,16 +30,19 @@ BoxDecoration neoLightOn = BoxDecoration(
 
 ThemeData darkTheme = ThemeData(
     primaryColor: Color(0xff292d32),
+    useMaterial3: true,
     appBarTheme: AppBarTheme(color: Color(0xff292d32)),
     backgroundColor: Color(0xff292d32),
     scaffoldBackgroundColor: Color(0xff292d32),
     shadowColor: Color(0xff2A2D32),
     textTheme: TextTheme(
-      headline6: TextStyle(
-        color: Color(0xffECF0F3),
-      ),
-      headline5: TextStyle(color: Colors.white, fontSize: 16.0),
-    ),
+        headline6: TextStyle(
+          color: Color(0xffECF0F3),
+        ),
+        headline5: TextStyle(color: Colors.white, fontSize: 16.0),
+        subtitle1: TextStyle(
+          color: Colors.white,
+        )),
     brightness: Brightness.dark,
     colorScheme: ColorScheme(
       brightness: Brightness.dark,
@@ -54,18 +57,27 @@ ThemeData darkTheme = ThemeData(
       surface: Color(0xff292d32),
       onSurface: Color(0xff292d32),
     ),
+    buttonTheme: ButtonThemeData(
+        buttonColor: Color(0xff292d32),
+        disabledColor: Colors.grey,
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))),
     // accentColor: Color(0xffECF0F3),
     iconTheme: IconThemeData(
       color: Color(0xffECF0F3),
     ));
 
 ThemeData lightTheme = ThemeData(
+    useMaterial3: true,
     appBarTheme: AppBarTheme(color: Color(0xffECF0F3)),
     scaffoldBackgroundColor: Color(0xffECF0F3),
     backgroundColor: Color(0xffECF0F3),
     primaryColor: Color(0xffECF0F3),
     shadowColor: Colors.black.withOpacity(0.09),
     textTheme: TextTheme(
+        subtitle1: TextStyle(
+          color: Color(0xff394C70),
+        ),
         headline6: TextStyle(
           color: Color(0xff394C70),
         ),
