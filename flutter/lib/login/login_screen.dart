@@ -1,8 +1,5 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -44,7 +41,15 @@ class LoginScreen extends StatelessWidget {
               keyboardType: TextInputType.emailAddress,
               obscureText: true,
               obscuringCharacter: '*',
-              validator: (value) {},
+              validator: (value) {
+                final passwordRegex = RegExp(
+                    r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$");
+                if (passwordRegex.hasMatch(value!)) {
+                  return null;
+                } else {
+                  return 'Your password must contain atleast a minimum of 8 characters, 1 uppercase and lowercase and 1 special character.';
+                }
+              },
             ),
             SizedBox(
               height: mediaSize.height * 0.1,

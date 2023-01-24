@@ -5,9 +5,14 @@ import 'package:smart_switches/firebase_provider.dart';
 import 'package:smart_switches/routes/routes_names.dart';
 import 'package:smart_switches/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'constants.dart';
 
 void main() async {
+  await WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
